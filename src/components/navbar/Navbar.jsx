@@ -3,14 +3,14 @@ import './navbar.css';
 import logo from '../../assets/logo.svg';
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 
-const Menu = () => {
+const Menu = ({setToggleMenu}) => {
   return (
     <>
-      <p><a href="#home">Home</a></p>
-      <p><a href="#wgpt3">What is GPT?</a></p>
-      <p><a href="#possibility">Open AI</a></p>
-      <p><a href="#features">Case Studies</a></p>
-      <p><a href="#blog">Library</a></p></>
+      <p><a href="#home" onClick={() => setToggleMenu(false)}>Home</a></p>
+      <p><a href="#wgpt3" onClick={() => setToggleMenu(false)}>What is GPT?</a></p>
+      <p><a href="#features" onClick={() => setToggleMenu(false)}>Case Studies</a></p>
+      <p><a href="#possibility" onClick={() => setToggleMenu(false)}>Open AI</a></p>
+      <p><a href="#blog" onClick={() => setToggleMenu(false)}>Library</a></p></>
   );
 }
 
@@ -37,7 +37,7 @@ const Navbar = () => {
           toggleMenu && (
             <div className='gpt3__navbar-menu_container scale-up-center'>
               <div className="gpt3__navbar-menu_container-links">
-                <Menu />
+                <Menu setToggleMenu={setToggleMenu}/>
                 <div className="gpt3__navbar-menu_container-links-sign">
                   <p>Sign in</p>
                   <button>Sign up</button>
